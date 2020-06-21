@@ -24,12 +24,6 @@ console.log(`A empresa ${empresa.nome} está localizada na ${empresa.endereço.r
  * Crie um programa com um objeto para armazenar dados de um progrador como nome, idade e tecnologias que trabalha.
  * Um programador pode trabalhar com várias tecnologia, por isso armazene essas tecnologias em um array .
  * As tecnologias também devem ser objetos contendo nome e especialidade.
- * 
- * Techs : [
- *   {nome: "C++", especialidade: "Desktop"},
- *   {nome: 'Python', especialidade: 'Data Science'},
- *   {nome: 'Javascript', especialidade: 'Web/Mobile'}
- * ]
  */
 
 const dev = {

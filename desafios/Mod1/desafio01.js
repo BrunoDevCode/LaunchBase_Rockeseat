@@ -40,7 +40,7 @@ const pessoa2 = {
 //     contribuicao: 35
 // }
 
-timeContribuicao = pessoa.idade + pessoa.contribuicao
+const timeContribuicao = pessoa2.idade + pessoa2.contribuicao
 
 if( pessoa2.sexo == "F" ) {
     if ( timeContribuicao >= 85 ) {
@@ -54,4 +54,16 @@ if( pessoa2.sexo == "F" ) {
     } else {
         console.log(`${pessoa2.nome}, você ainda não pode se aponsentar`)
     }
+}
+
+// Correção
+
+const homemPodeAposentar = sexo == 'M' && pessoa2.contribuicao >= 35 && calculoContribuição >= 95
+
+const mulherPodeAposentar = sexo == 'F' && pessoa2.contribuicao >= 35 && calculoContribuição >= 95
+
+if ( homemPodeAposentar || mulherPodeAposentar ) {
+    console.log(`${pessoa2.nome}, você já pode se aposentar`)
+} else {
+    console.log(`${pessoa2.nome}, você ainda não pode se aponsentar`)
 }
