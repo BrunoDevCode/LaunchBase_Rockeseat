@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap");
 
+:root {
+    --color-rocket: #7D40E7;
+    --card-back: #ABA69F;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +29,7 @@ header {
     width: 100%;
     text-align: center;
 
-    background: #7D40E7;
+    background: var(--color-rocket);
     border-bottom: 1px solid #333;
     display: block;
 }
@@ -154,4 +159,56 @@ header h1 img {
 
 .networking #facebook {
     color: #4267b2;
+}
+
+/* Submenu */
+
+.submenu {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 38px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+
+    max-width: 1300px;
+    margin: 40px auto;
+}
+
+.card {
+    width: 400px;
+    background-color: var(--card-back);
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.cards .card-img{
+    text-align: center;
+}
+
+.card-content,
+.card-info {
+    margin-top: 8px;
+    padding: 24px;
+}
+
+.card-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-info .card-price {
+    background: var(--card-back);
+    filter: brightness(90%);
+    border-radius: 20px;
+    padding: 5px 20px;
+    text-align: center;
 }
