@@ -13,6 +13,8 @@ for (let card of cards) {
 document.querySelector('.close-modal').addEventListener('click', function() {
     modalOverlay.classList.remove('active');
     modalOverlay.querySelector('iframe').src = '';
+    if (modal.classList.contains('maximize'))
+        modal.classList.remove('maximize')
 })
 
 modalOverlay.querySelector('.maximize-modal').addEventListener('click', function() {
