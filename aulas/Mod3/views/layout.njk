@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta dados são instruções para o navegador -->
+
+        {% block head %}
+            <title>Bruno Henrique</title>
+        {% endblock %}
+
+        <link rel='stylesheet' href='/style.css' />
+    </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/">Sobre</a>
+                <a href="/portfolio">Aulas</a>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+    </body>
+</html>
