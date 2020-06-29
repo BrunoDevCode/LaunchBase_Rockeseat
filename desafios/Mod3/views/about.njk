@@ -19,37 +19,23 @@
                 <p id='company'>Nubank, Netflix, Uber, Instagram e Airbnb</p>
 
                 <ul>
-                    <li>
-                        <div class="image">
-                            <img src='https://nodejs.org/static/images/logo.svg' alt='Node.JS'/>
-                            <p>Node.Js</p>
-                        </div>
+                    {% for tech in empresa.techs %}
+                        <li>
+                            <div class="image">
+                                <img src='{{ tech.img_url }}' alt='{{ tech.name }}'/>
+                                <p>{{ tech.name }}</p>
+                            </div>
 
-                        <p>Usado para a criação do Backend - Servidor</p>
-                    </li>
-                    <li>
-                        <div class='react image'>
-                            <img src='https://reactnative.dev/img/header_logo.svg' alt='ReactJS'/>
-                            <p>React JS</p>
-                        </div>
-
-                        <p>Usado para a construção de Apps Desktop</p>
-                    </li>
-                    <li>
-                        <div class='react image'>
-                            <img src='https://reactnative.dev/img/header_logo.svg' alt='ReactJS'/>
-                            <p>React Native</p>
-                        </div>
-
-                        <p>Usado para a criação de Apps Mobile</p>
-                    </li>
+                            <p>{{ tech.text }}</p>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
 
             <div class="networking">
-                <a id='github' href="https://github.com/Rocketseat" target='_blank'>Github</a>
-                <a id='instagram' href="https://www.instagram.com/rocketseat_oficial/" target='_blank'>Instagram</a>
-                <a id='facebook' href="https://www.facebook.com/rocketseat/" target='_blank'>Facebook</a>
+                {% for link in empresa.networking %}
+                    <a id='{{ link.name }}' href="{{ link.url }}">{{ link.name }}</a>
+                {% endfor %}
             </div>
         </div>
     </main>
