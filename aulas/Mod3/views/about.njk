@@ -1,19 +1,19 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block content %}
 
 <div id="wrapper">
-    <img src="https://avatars3.githubusercontent.com/u/45718816?s=400&u=421d3cf1dc5ee8b08263a9c2308fb31d0d1a7824&v=4"
-        alt="Bruno Henrique" />
-    <h1>Bruno Henrique</h1>
-    <h2>Desenvolvedor Full-Stack JS</h2>
-    <p>De um conferida no meu <a href='https://github.com/BrunoDevCode/' target='_blank'>Github</a></p>
+    <img src="{{ about.avatar_url }}"
+        alt="{{ about.name }}" />
+    <h1>{{ about.name }}</h1>
+    <h2>{{ about.role }}</h2>
+    <p>{{ about.description}}</p>
 </div>
 
 <div id='links-footer' class="links">
-    <a href="https://github.com/BrunoDevCode/" target='_blank'>Github</a>
-    <a href="#" target='_blank'>Twitter</a>
-    <a href="https://www.linkedin.com/in/brunoh5/" target='_blank'>Linkedin</a>
+    {% for link in about.links %}
+        <a href="{{ link.url }}" target='_blank'>{{ link.name }}</a>
+    {% endfor %}
 </div>
 
 {% endblock %}
