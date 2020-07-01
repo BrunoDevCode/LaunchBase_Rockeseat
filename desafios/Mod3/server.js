@@ -24,6 +24,19 @@ server.get('/conteudo', (req, res) => {
     return res.render('conteudo', {empresa})
 })
 
+server.get('/courses/:id', (req, res) => {
+    const id = req.params.id
+
+    const video = empresa.cards.find((cards) => {
+        return cards.id == id
+    })
+
+    if(!video)
+        return res.send('Course not found')
+
+    return res.render('courses', {video})
+})
+
 server.use((req, res) => {
     return res.status(404).render('not-found')
 })
