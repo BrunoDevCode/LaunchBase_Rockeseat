@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Meta dados são instruções para o navegador -->
+
+        {% block head %}
+            <title>Gym manager</title>
+        {% endblock %}
+
+        <link rel='stylesheet' href='/style.css' />
+    </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/" class='active'>Instructor</a>
+                <a href="/members">Members</a>
+            </div>
+        </header>
+
+        {% block content %}{% endblock %}
+
+    </body>
+</html>
