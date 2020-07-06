@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     border: none;
+    outline: none;
     box-sizing: border-box;
 }
 
@@ -122,6 +123,10 @@ header {
     border-top: none;
 }
 
+.card-info:nth-child(4) {
+    line-height: 28px;
+}
+
 .card-info:nth-child(6) {
     font-size: 14px;
     color: #777;
@@ -143,4 +148,37 @@ header {
 
 .card-info span + span {
     margin-left: 8px;
+}
+
+/* === Form === */
+
+input {
+    width: 100%;
+    font-size: 18px;
+    color: #777;
+}
+
+input[type='radio'] {
+    width: initial;
+    font-weight: normal;
+    margin-right: 4px;
+}
+
+select {
+    width: 100%;
+    height: 24px;
+    outline: none;
+    font-size: 16px;
+    line-height: 26px;
+    color: #555;
+}
+
+button[type='submit'] {
+    border-radius: 16px;
+    font-size: 18px;
+    line-height: 28px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 16px;
 }
