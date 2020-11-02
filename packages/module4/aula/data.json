@@ -1,0 +1,25 @@
+{
+  "instructors": [
+    {
+      "avatar_url": "https://google.com",
+      "name": "Bruno Henrique",
+      "birth": "2002-04-14",
+      "gender": "M",
+      "services": "Programação, SQL"
+    },
+    {
+      "avatar_url": "https://google.com",
+      "name": "Bat Girl",
+      "birth": "2002-04-14",
+      "gender": "F",
+      "services": "Programação, SQL"
+    },
+    {
+      "avatar_url": "https://google.com",
+      "name": "Batman",
+      "birth": "1975-09-15",
+      "gender": "M",
+      "services": "Matar Bandidos"
+    }
+  ]
+}
