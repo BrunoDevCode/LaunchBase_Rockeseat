@@ -1,0 +1,15 @@
+{
+  "name": "launchbase",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*/aula/**",
+      "packages/*/desafio/**"
+    ]
+  },
+  "repository": "https://github.com/BrunoDevCode/LaunchBase",
+  "author": "Bruno Henrique Santos <brunohenriquesantos272@gmail.com>",
+  "license": "MIT"
+}
