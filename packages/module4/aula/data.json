@@ -2,24 +2,21 @@
   "instructors": [
     {
       "avatar_url": "https://google.com",
+      "birth": 1018742400000,
+      "created_at": 1604360869539,
+      "id": 1,
       "name": "Bruno Henrique",
-      "birth": "2002-04-14",
-      "gender": "M",
-      "services": "Programação, SQL"
+      "services": "Minas Gerais",
+      "gender": "M"
     },
     {
-      "avatar_url": "https://google.com",
-      "name": "Bat Girl",
-      "birth": "2002-04-14",
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
+      "name": "Kristine Stefany",
+      "birth": 1018828800000,
       "gender": "F",
-      "services": "Programação, SQL"
-    },
-    {
-      "avatar_url": "https://google.com",
-      "name": "Batman",
-      "birth": "1975-09-15",
-      "gender": "M",
-      "services": "Matar Bandidos"
+      "services": "Minas Gerais",
+      "created_at": 1604360937402
     }
   ]
 }
