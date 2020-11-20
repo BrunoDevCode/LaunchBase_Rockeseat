@@ -2,7 +2,7 @@
 
 ## Descrição
 
-<p align='justify'>O curso que eu mais insvesti na minha e que o retorno em experiencia, que está sendo muito bom já aprendi pelo menos fazer um site estatico com um backend, que pode se
+<p align='justify'>O curso que eu mais insvesti na minha vida e que o retorno em experiencia, que está sendo muito bom já aprendi pelo menos fazer um site estatico com um backend, que pode se
 escalar o suficiente para comportar muito bem uma aplicação bem grande.
 
 Aprendi um pouco de lógica de programação no começo que foi algo muito necessário para diminuar as chance em que eu fique totalmente perdido, nos laços for ou em if's,
@@ -25,6 +25,8 @@ algo que eu estava querendo muito e acabei aprendendo foi como configurar a app 
 
 ´´´
   yarn workspace @launchbase/aulaOuDesafio_modNumeroDoModulo start
+  // Example :
+  yarn workspace @launchbase/desafio_mod4 start
 ´´´
 
 ## Dependencias e Libs:
