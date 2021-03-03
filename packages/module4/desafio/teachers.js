@@ -44,7 +44,9 @@ exports.show = (req, res) => {
 
   const teacher = {
     ...foundTeacher,
+    works: foundTeacher.works.split(','),
     age: age(foundTeacher.birth),
+    created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.created_at),
   };
 
   return res.render('teachers/show', { teacher });

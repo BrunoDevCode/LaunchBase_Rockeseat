@@ -34,15 +34,17 @@
         <div class="">Acompanhamento</div>
         <div class="">
           {% for work in teacher.works %}
-            <span>{{work}}</span>
+            <span class='work'>{{work}}</span>
           {% endfor %}
         </div>
       </div>
 
       <div class="item">
         <div class="">Desde</div>
-        <div class="">{{teacher.create_at}}</div>
+        <div class="">{{teacher.created_at}}</div>
       </div>
+
+      <a href='/teachers/{{teacher.id}}/edit' class='button'>Editar</a>
     </div>
   </div>
 {% endblock %}
