@@ -17,9 +17,7 @@ routes.post('/teachers/create', teachers.receiveForm);
 
 routes.get('/teachers/:id', teachers.show);
 
-routes.get('/teachers/:id/edit', (req, res) => {
-  return res.render('teacher/edit');
-});
+routes.get('/teachers/:id/edit', teachers.edit);
 
 routes.get('/students', (request, response) => {
   return response.render('students/index');

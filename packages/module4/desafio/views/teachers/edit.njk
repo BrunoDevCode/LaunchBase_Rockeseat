@@ -1,0 +1,16 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+  <title>Create Teacher</title>
+{% endblock %}
+
+{% block content %}
+  <form class="card" method='POST' action='/teachers/create'>
+    <div class="avatar"></div>
+    <div class="details">
+      <h3>Criar um novo professor</h3>
+
+      {% include 'teachers/fields.njk' %}
+  </form>
+
+{% endblock %}
