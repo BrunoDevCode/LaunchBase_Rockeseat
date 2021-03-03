@@ -2,18 +2,27 @@ const routes = require('express').Router();
 const teachers = require('./teachers');
 
 routes.get('/', (request, response) => {
-  return response.redirect('/teachers')
-})
+  return response.redirect('/teachers');
+});
 
 routes.get('/teachers', (request, response) => {
-  return response.render('teachers/index')
-})
+  return response.render('teachers/index');
+});
 
-routes.get('/teachers/create', teachers.renderForm);
+routes.get('/teachers/create', (req, res) => {
+  return res.render('teachers/create');
+});
+
 routes.post('/teachers/create', teachers.receiveForm);
 
-routes.get('/students', (request, response) => {
-  return response.render('students/index')
-})
+routes.get('/teachers/:id', teachers.show);
 
-module.exports = routes
+routes.get('/teachers/:id/edit', (req, res) => {
+  return res.render('teacher/edit');
+});
+
+routes.get('/students', (request, response) => {
+  return response.render('students/index');
+});
+
+module.exports = routes;
