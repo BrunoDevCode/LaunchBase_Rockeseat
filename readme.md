@@ -11,11 +11,13 @@ também aprendi como trabalhar array's e objetos.</p>
 ### O que foi Aprendido
 
 #### Front-End
+
 <p align='justify'>Aprendi a usar o ::root para configurar variaveis no css que é bem util, talvez eu estude a regra de espaçamento do Google(A Regra dos 8 Pontos),
 tambem a usar os ::After ou ::Before que fazem o mesmo criando um elemento no HTML usando o CSS,
 animations no CSS principalmente o metodo TraslateX e TranslateY que são bem faceis e o restante não deve ser nada difícil de se usar.</p>
 
 #### Back-end
+
 <p align='justify'>Aprendi como utilizar o nunjucks e como configurar-lo que é "bem tranquilo", como se fosse um JS literalmente dentro de um HTML,
 como usar bem a Lib FS(fileSystem) do Node e comecei a salvar os dados vindos de um formulario diretamente em um arquivo JSON,
 fazer também uma filtragem, se os dados do app estão vazios,
@@ -24,15 +26,15 @@ algo que eu estava querendo muito e acabei aprendendo foi como configurar a app 
 ## Como Iniciar cada projeto
 
 ´´´
-  yarn workspace @launchbase/aulaOuDesafio_modNumeroDoModulo start
-  // Example :
-  yarn workspace @launchbase/desafio_mod4 start
+// Example :
+yarn workspace @launchbase/desafio_mod4 start
 ´´´
 
 ## Dependencias e Libs:
+
 - [Express](http://expressjs.com/pt-br/)
 - [Nunjucks](https://mozilla.github.io/nunjucks/)
 
-***Code Base para: Node.Js, HTML com Nunjucks, Animations and Trasition no CSS, Lib FS.***
+**_Code Base para: Node.Js, HTML com Nunjucks, Animations and Trasition no CSS, Lib FS._**
 
 > Prof.: Mayk Brito @Rocketseat
