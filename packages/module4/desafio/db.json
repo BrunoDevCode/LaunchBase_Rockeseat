@@ -1,8 +1,4 @@
 {
-  "avatar_url": "https://google.com",
-  "name": "Bruno Henrique",
-  "birth": "2002-04-14",
-  "scolarity": "Ensino Médio Completo",
-  "typeOfClass": "on",
-  "works": "Minas Gerais"
+  "teachers": [],
+  "students": []
 }
