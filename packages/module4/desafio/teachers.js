@@ -1,6 +1,6 @@
 const fs = require('fs');
 const data = require('./db.json');
-const { age } = require('./utils');
+const { age, date } = require('./utils');
 
 exports.receiveForm = (req, res) => {
   const keys = Object.keys(req.body);
@@ -16,7 +16,7 @@ exports.receiveForm = (req, res) => {
   data.teachers.push({
     id,
     avatar_url,
-    birth,
+    birth: Date.parse(birth),
     name,
     degree,
     typeOfClass,
@@ -46,7 +46,9 @@ exports.show = (req, res) => {
     ...foundTeacher,
     works: foundTeacher.works.split(','),
     age: age(foundTeacher.birth),
-    created_at: new Intl.DateTimeFormat('pt-BR').format(foundTeacher.created_at),
+    created_at: new Intl.DateTimeFormat('pt-BR').format(
+      foundTeacher.created_at
+    ),
   };
 
   return res.render('teachers/show', { teacher });
@@ -59,7 +61,14 @@ exports.edit = (req, res) => {
     return teacher.id == id;
   });
 
+  const teacher = {
+    ...foundTeacher,
+    birth: date(foundTeacher.birth),
+  };
+
+  console.log(teacher);
+
   if (!foundTeacher) return res.send('Instructor not found');
 
-  return res.render('teachers/edit', { teacher: foundTeacher });
+  return res.render('teachers/edit', { teacher });
 };

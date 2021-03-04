@@ -23,33 +23,37 @@
     <div class="">Grau de escolaridade</div>
     <div class="">
       <select name="degree" required>
-        <option value=''>Selecione uma opção ...</option>
+        <option value=''
+          {% if teacher.degree == "" %}
+            selected
+          {% endif %}
+        >Selecione uma opção ...</option>
 
         <option
           value="Ensino Médio Completo"
           {% if teacher.degree == "Ensino Médio Completo" %}
-            checked
+            selected
           {% endif %}
         >Ensino Médio Completo</option>
 
         <option
           value="Ensino Superior Completo"
           {% if teacher.degree == "Ensino Superior Completo" %}
-            checked
+            selected
           {% endif %}
         >Ensino Superior Completo</option>
 
         <option
           value="Mestrado"
           {% if teacher.degree == "Mestrado" %}
-                checked
+            selected
           {% endif %}
         >Mestrado</option>
 
         <option
           value="Doutorado"
           {% if teacher.degree == "Doutorado" %}
-            checked
+            selected
           {% endif %}
         >Doutorado</option>
       </select>
@@ -63,7 +67,7 @@
         <input 
           type="radio"
           name="typeOfClass"
-          id="Presencial"
+          value="Presencial"
           {% if teacher.typeOfClass == "Presencial" %}
             checked
           {% endif %}
@@ -74,12 +78,12 @@
         <input
           type="radio"
           name="typeOfClass"
-          value='Á Distancia'
+          value='À Distancia'
           {% if teacher.typeOfClass == "À Distancia" %}
             checked
           {% endif %}
         />
-        Á Distancia
+        À Distancia
       </span>
     </div>
   </div>
