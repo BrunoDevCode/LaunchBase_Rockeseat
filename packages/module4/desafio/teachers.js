@@ -72,3 +72,9 @@ exports.edit = (req, res) => {
 
   return res.render('teachers/edit', { teacher });
 };
+
+exports.put = (req, res) => {
+  const { id } = req.body;
+
+  
+}
