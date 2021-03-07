@@ -40,7 +40,7 @@ exports.show = (req, res) => {
     return teacher.id == id;
   });
 
-  if (!foundTeacher) return res.send('Instructor not found');
+  if (!foundTeacher) return res.send('Teacher not found');
 
   const teacher = {
     ...foundTeacher,
@@ -68,7 +68,7 @@ exports.edit = (req, res) => {
 
   console.log(teacher);
 
-  if (!foundTeacher) return res.send('Instructor not found');
+  if (!foundTeacher) return res.send('Teacher not found');
 
   return res.render('teachers/edit', { teacher });
 };
@@ -76,5 +76,28 @@ exports.edit = (req, res) => {
 exports.put = (req, res) => {
   const { id } = req.body;
 
-  
+  let index = 0;
+
+  const foundTeacher = data.teachers.find((teacher, foundIndex) => {
+    if (id == teacher.id) {
+      index = foundIndex;
+      return true;
+    }
+  });
+
+  if(!foundTeacher) return res.send('Teacher not found');
+
+  const teacher = {
+    ...foundTeacher,
+    ...req.body,
+    birth: Date.parse(req.body.birth),
+  }
+
+  data.teachers[index] = teacher;
+
+  fs.writeFile('db.json', JSON.stringify(data, null, 2), (err) => {
+    if (err) return res.send('Write error !');
+
+    return res.redirect(`/teachers/${id}`);
+  });
 }

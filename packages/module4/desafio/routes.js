@@ -19,7 +19,7 @@ routes.get('/teachers/:id', teachers.show);
 
 routes.get('/teachers/:id/edit', teachers.edit);
 
-routes.put('teachers', teachers.put);
+routes.put('/teachers', teachers.put);
 
 routes.get('/students', (request, response) => {
   return response.render('students/index');
