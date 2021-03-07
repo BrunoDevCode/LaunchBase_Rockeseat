@@ -13,7 +13,7 @@ routes.get('/teachers/create', (req, res) => {
   return res.render('teachers/create');
 });
 
-routes.post('/teachers/create', teachers.receiveForm);
+routes.post('/teachers/create', teachers.create);
 
 routes.get('/teachers/:id', teachers.show);
 

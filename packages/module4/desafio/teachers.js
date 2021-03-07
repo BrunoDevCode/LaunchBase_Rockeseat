@@ -2,8 +2,10 @@ const fs = require('fs');
 const data = require('./db.json');
 const { age, date } = require('./utils');
 
-exports.receiveForm = (req, res) => {
+exports.create = (req, res) => {
   const keys = Object.keys(req.body);
+
+  console.log(req.body);
 
   for (key of keys) {
     if (req.body[key] == '') return res.send('Please fill all fields');
