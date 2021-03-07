@@ -107,7 +107,7 @@ header {
   margin-bottom: 8px;
 }
 
-form.card input {
+.card input {
   width: 100%;
   border-radius: 8px;
   padding: 4px 8px;
@@ -115,17 +115,17 @@ form.card input {
   font-size: 18px;
 }
 
-form.card input::placeholder {
+.card input::placeholder {
   font-weight: 700;
   font-size: 16px;
 }
 
-form.card input[type='radio'] {
+.card input[type='radio'] {
   width: initial;
   margin-right: 8px;
 }
 
-form.card button[type='submit'] {
+.card button[type='submit'] {
   width: 100%;
   background-color: var(--background-header);
   border-radius: 8px;
@@ -135,7 +135,7 @@ form.card button[type='submit'] {
   font-weight: 400;
 }
 
-form.card select {
+.card select {
   padding: 4px 8px;
   border-radius: 8px;
 }
@@ -147,13 +147,16 @@ form.card select {
   display: inline-block;
 }
 
-a.button {
+a.button, #delete-form button {
   display: block;
   border-radius: 8px;
   text-align: center;
   padding: 8px 16px;
   background-color: #FFD166;
   margin-top: 16px;
-  text-transform: uppercase;
   color: white;
+}
+
+#delete-form button{
+  background-color: #902923;
 }

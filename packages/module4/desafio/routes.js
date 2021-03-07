@@ -21,6 +21,8 @@ routes.get('/teachers/:id/edit', teachers.edit);
 
 routes.put('/teachers', teachers.put);
 
+routes.delete('/teachers', teachers.delete);
+
 routes.get('/students', (request, response) => {
   return response.render('students/index');
 });
