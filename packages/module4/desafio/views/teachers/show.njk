@@ -27,7 +27,7 @@
 
       <div class="item">
         <div class="">Tipo de aula</div>
-        <div class="">{{teacher.typeOfClass}}</div>
+        <div class="">{{ "Presencial" if teacher.typeOfClass === "P" else "À Distância" }}</div>
       </div>
 
       <div class="item">

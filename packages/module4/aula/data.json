@@ -1,8 +1,22 @@
 {
   "instructors": [
     {
+<<<<<<< HEAD
       "id": "2",
       "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
+=======
+      "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
+      "birth": 1018742400000,
+      "created_at": 1604360869539,
+      "id": 1,
+      "name": "Bruno Henrique",
+      "services": "Minas Gerais",
+      "gender": "M"
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/collection/1715110/500x500",
+>>>>>>> a5f9639f5b1de1a2456c5c122203b7ee210f0745
       "name": "Kristine Stefany",
       "birth": 1018828800000,
       "gender": "F",
