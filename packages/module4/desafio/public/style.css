@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;400,700;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;400,700;1,400&display=swap');
 :root {
-  --background-color: #26547C;
-  --background-header: #06D6A0;
+  --background-color: #26547c;
+  --background-header: #06d6a0;
 }
 
 * {
@@ -22,7 +22,10 @@ a {
   cursor: pointer;
 }
 
-body, input, button, select {
+body,
+input,
+button,
+select {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -41,7 +44,7 @@ header {
   position: relative;
 }
 
-.links a+a {
+.links a + a {
   margin-left: 24px;
 }
 
@@ -50,14 +53,14 @@ header {
   width: 0;
   position: absolute;
   height: 3px;
-  background-color: #2660A4;
+  background-color: #2660a4;
   bottom: -3px;
   left: 0;
 }
 
 .links a:hover::after {
   width: 100%;
-  transition: width .3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
 .card {
@@ -66,15 +69,15 @@ header {
   min-height: 400px;
   display: grid;
   grid-template-columns: 40% 60%;
-  background-color: #F0F0F5;
-  animation: down .4s ease-in-out;
+  background-color: #f0f0f5;
+  animation: down 0.4s ease-in-out;
   box-shadow: 0px 2px 6px -1px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes down {
   from {
     opacity: 0;
-    transform: translateY(-60px)
+    transform: translateY(-60px);
   }
   to {
     opacity: 1;
@@ -142,21 +145,63 @@ header {
 
 .card .details .item .work {
   border-radius: 8px;
-  background-color: #EF476F;
+  background-color: #ef476f;
   padding: 8px;
   display: inline-block;
 }
 
-a.button, #delete-form button {
+a.button,
+#delete-form button {
   display: block;
   border-radius: 8px;
   text-align: center;
   padding: 8px 16px;
-  background-color: #FFD166;
+  background-color: #ffd166;
   margin-top: 16px;
   color: white;
 }
 
-#delete-form button{
+#delete-form button {
   background-color: #902923;
+}
+
+.card.table-container {
+  display: block;
+  padding: 32px;
+  text-align: center;
+}
+
+.card.table-container th {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.card.table-container .work {
+  padding: 8px 16px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+}
+
+.card.table-container td:first-child {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+}
+
+.card.table-container td:first-child span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.card.table-container td:last-child a {
+  background-color: var(--background-header);
+  padding: 4px;
+  border-radius: 4px;
+  background-position: center;
+  background-size: cover;
 }

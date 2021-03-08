@@ -5,43 +5,31 @@
 {% endblock %}
 
 {% block content %}
-  <div class="card">
-    <div class="avatar"></div>
-    <div class="details">
-      <h3>Detalhes</h3>
-
-      <div class="item">
-        <div class="">Nome</div>
-        <div class="">Douglas de Oliveira</div>
-      </div>
-
-      <div class="item">
-        <div class="">Idade</div>
-        <div class="">50</div>
-      </div>
-
-      <div class="item">
-        <div class="">Grau de escolaridade</div>
-        <div class="">Doutorado</div>
-      </div>
-
-      <div class="item">
-        <div class="">Tipo de aula</div>
-        <div class="">Presencial</div>
-      </div>
-
-      <div class="item">
-        <div class="">Acompanhamento</div>
-        <div class="">
-          <span>Geografia</span>
-          <span>Português</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="">Desde</div>
-        <div class="">25/08/2020</div>
-      </div>
-    </div>
+  <div class="card table-container">
+    <table width='100%'>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Acompanhamento</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for teacher in teachers %}
+          <tr>
+            <td>
+              <span style="background-image: url({{teacher.avatar_url}})"></span>
+              {{teacher.name}}
+            </td>
+            <td>
+              {% for work in teacher.works %}
+                <span class='work'>{{work}}</span>
+              {% endfor %}
+            </td>
+            <td><a href="/teachers/{{teacher.id}}">Ver</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% endblock %}
