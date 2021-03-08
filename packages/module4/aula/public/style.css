@@ -181,12 +181,10 @@ a.button {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
 #form-delete button[type='submit'] {
   margin-top: 8px;
   background-color: lightcoral;
 }
-=======
 /* INDEX INSTRUCTORS */
 
 .table-container {
@@ -199,13 +197,14 @@ a.button {
   border-spacing: 0;
 }
 
-.table-container thead tr th{
+.table-container thead tr th {
   text-align: left;
 }
 
-td, th {
+td,
+th {
   padding: 16px;
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 1px solid #d9d9d9;
 }
 
 th {
@@ -224,7 +223,7 @@ tbody tr td:first-child {
   align-items: center;
 }
 
-tbody tr td:first-child span{
+tbody tr td:first-child span {
   width: 48px;
   height: 48px;
   background-position: center;
@@ -234,7 +233,8 @@ tbody tr td:first-child span{
   border: 2px solid white;
 }
 
-tbody tr td:last-child a{
+tbody tr td:last-child a,
+.table-container > a {
   background-color: var(--primary-color);
   padding: 8px 16px;
   text-decoration: none;
@@ -244,7 +244,12 @@ tbody tr td:last-child a{
   border-radius: 6px;
 }
 
-.table-container thead tr th:last-child, td:last-child {
+.table-container > a {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.table-container thead tr th:last-child,
+td:last-child {
   text-align: center;
 }
->>>>>>> a5f9639f5b1de1a2456c5c122203b7ee210f0745
