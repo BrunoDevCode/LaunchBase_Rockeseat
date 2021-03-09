@@ -2,40 +2,47 @@
 
 {% block content %}
   <div class="card">
-    <section class="avatar" style="background: url({{ instructor.avatar_url }}) no-repeat center center / cover">
-
-    </section>
+    <section class="avatar" style="background: url({{ member.avatar_url }}) no-repeat center center / cover"></section>
 
     <section class="details">
       <h3>Detalhes</h3>
 
       <div class="item">
-        <div class="">Instrutor</div>
-        <div class="">{{ instructor.name }}</div>
+        <div class="">Membro</div>
+        <div class="">{{ member.name }}</div>
       </div>
+
       <div class="item">
-        <div class="">Idade</div>
-        <div class="">{{ instructor.age }}</div>
+        <div class="">Email</div>
+        <div class="">{{ member.email }}</div>
       </div>
+
+      <div class="item">
+        <div class="">Aniversário</div>
+        <div class="">{{ member.birth }}</div>
+      </div>
+
       <div class="item">
         <div class="">Sexo</div>
-        <div class="">{{ "Masculino" if instructor.gender == "M" else "Feminino" }}</div>
-      </div>
-      <div class="item">
-        <div class="">Acompanhamento</div>
-        <div class="">
-          {% for service in instructor.services %}
-          <span>{{ service }}</span>
-          {% endfor %}
-        </div>
+        <div class="">{{ "Masculino" if member.gender == "M" else "Feminino" }}</div>
       </div>
 
       <div class="item">
-        <div class="">Desde</div>
-        <div class="">{{ instructor.created_at }}</div>
+        <div class="">Tipo Sanguíneo</div>
+        <div class="">{{ member.blood }}</div>
       </div>
 
-      <a href='/instructors/{{ instructor.id }}/edit' class='button'>Editar</a>
+      <div class="item">
+        <div class="">Peso (kg)</div>
+        <div class="">{{ member.weight }}</div>
+      </div>
+
+      <div class="item">
+        <div class="">Altura (cm)</div>
+        <div class="">{{ member.height }}</div>
+      </div>
+
+      <a href='/members/{{ member.id }}/edit' class='button'>Editar</a>
     </section>
   </div>
 {% endblock %}
