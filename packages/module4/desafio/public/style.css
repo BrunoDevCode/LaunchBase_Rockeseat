@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;400,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 :root {
   --background-color: #26547c;
   --background-header: #06d6a0;
@@ -63,6 +63,11 @@ header {
   transition: width 0.3s ease-in-out;
 }
 
+.links a.active {
+  font-weight: 700;
+  color: var(--background-color);
+}
+
 .card {
   margin: 64px auto;
   width: 800px;
@@ -85,7 +90,6 @@ header {
 }
 
 .card .avatar {
-  background-image: url(https://source.unsplash.com/collection/332741/300x300);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -168,6 +172,19 @@ a.button,
 .card.table-container {
   display: block;
   padding: 32px;
+}
+
+.card.table-container a.new {
+  background-color: var(--background-color);
+  padding: 8px;
+  font-size: 16px;
+  color: white;
+  display: inline-block;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.card.table-container table {
   text-align: center;
 }
 

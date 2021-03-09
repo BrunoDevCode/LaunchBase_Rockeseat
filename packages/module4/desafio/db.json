@@ -1,4 +1,14 @@
 {
   "teachers": [],
-  "students": []
+  "students": [
+    {
+      "id": 1,
+      "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
+      "name": "Bruno Henrique",
+      "email": "brunohenrique@gmail.com",
+      "birth": 1018742400000,
+      "grade": "3EM",
+      "workload": "1150"
+    }
+  ]
 }

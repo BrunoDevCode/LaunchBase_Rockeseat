@@ -1,26 +1,24 @@
 const fs = require('fs');
-const data = require('./db.json');
-const { age, date } = require('./utils');
+const data = require('../db.json');
+const { age, date } = require('../utils');
 
 exports.index = (req, res) => {
   const teachers = [];
-
-  console.log(teachers);
 
   data.teachers.map((teacher) => {
     teacher.works = teacher.works.split(',');
     teachers.push(teacher);
   });
 
-  console.log(teachers);
-
   return res.render('teachers/index', { teachers });
 };
 
 exports.create = (req, res) => {
-  const keys = Object.keys(req.body);
+  return res.render('teachers/create');
+};
 
-  console.log(req.body);
+exports.post = (req, res) => {
+  const keys = Object.keys(req.body);
 
   for (key of keys) {
     if (req.body[key] == '') return res.send('Please fill all fields');
@@ -40,8 +38,6 @@ exports.create = (req, res) => {
     works,
     created_at: Date.now(),
   });
-
-  // Usar arrays para preços estilos o works
 
   fs.writeFile('db.json', JSON.stringify(data, null, 2), (error) => {
     if (error) return res.send('Error in write file');
@@ -82,8 +78,6 @@ exports.edit = (req, res) => {
     ...foundTeacher,
     birth: date(foundTeacher.birth),
   };
-
-  console.log(teacher);
 
   if (!foundTeacher) return res.send('Teacher not found');
 
