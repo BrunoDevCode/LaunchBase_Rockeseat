@@ -1,0 +1,41 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+  <title>School Manager</title>
+{% endblock %}
+
+{% block content %}
+  <div class="card">
+    <div class="avatar" style='background-image: url({{student.avatar_url}})'></div>
+    <div class="details">
+      <h3>Detalhes</h3>
+
+      <div class="item">
+        <div class="">Nome</div>
+        <div class="">{{student.name}}</div>
+      </div>
+
+      <div class="item">
+        <div class="">Email</div>
+        <div class="">{{student.email}}</div>
+      </div>
+
+      <div class="item">
+        <div class="">Idade</div>
+        <div class="">{{student.age}}</div>
+      </div>
+
+      <div class="item">
+        <div class="">Ano Escolar</div>
+        <div class="">{{student.grade}}</div>
+      </div>
+
+      <div class="item">
+        <div class="">Carga Horária</div>
+        <div class="">{{student.workload}}</div>
+      </div>
+
+      <a href='/students/{{student.id}}/edit' class='button'>Editar</a>
+    </div>
+  </div>
+{% endblock %}
