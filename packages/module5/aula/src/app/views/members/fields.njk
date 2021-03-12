@@ -12,8 +12,8 @@
   </div>
 
   <div class="item">
-    <div class="">Nome</div>
-    <div class="">
+    <div>Nome</div>
+    <div>
       <input 
         type="text"
         name='name'
@@ -24,8 +24,8 @@
   </div>
 
   <div class="item">
-    <div class="">Email</div>
-    <div class="">
+    <div>Email</div>
+    <div>
       <input 
         type="email"
         name='email'
@@ -35,15 +35,15 @@
   </div>
 
   <div class="item">
-    <div class="">Data de Nascimento</div>
-    <div class="">
+    <div>Data de Nascimento</div>
+    <div>
       <input type="date" name="birth" value='{{ member.birth }}'/>
     </div>
   </div>
 
   <div class="item">
-    <div class="">Sexo</div>
-    <div class="">
+    <div>Sexo</div>
+    <div>
       <span>
         <input 
           type="radio"
@@ -70,8 +70,8 @@
   </div>
   
   <div class="item">
-    <div class="">Tipo Sanguíneo</div>
-    <div class="">
+    <div>Tipo Sanguíneo</div>
+    <div>
       <select name='blood'>
         <option
           value='A+'
@@ -133,16 +133,34 @@
   </div>
 
   <div class="item">
-    <div class="">Peso (kg)</div>
-    <div class="">
+    <div>Peso (kg)</div>
+    <div>
       <input type="number" name="weight" value='{{ member.weight }}'/>
     </div>
   </div>
 
   <div class="item">
-    <div class="">Altura (cm)</div>
-    <div class="">
+    <div>Altura (cm)</div>
+    <div>
       <input type="number" name="height" value='{{ member.height }}'/>
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Instrutor</div>
+    <div>
+      <select name='instructor'>
+        {% for instructor in instructorOptions %}
+          <option
+            value='{{instructor.id}}'
+            {% if member.instructor_id == instructor.id %}
+            selected
+            {% endif %}
+          >
+            {{instructor.name}}
+          </option>
+        {% endfor %}
+      </select>
     </div>
   </div>
 

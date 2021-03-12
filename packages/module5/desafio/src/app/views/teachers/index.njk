@@ -6,7 +6,20 @@
 
 {% block content %}
   <div class="card table-container">
-    <a class='new' href='/teachers/create'>Novo</a>
+    <div class='header'>
+      <a class='new' href='/teachers/create'>Novo</a>
+
+      <form method='GET' action='/teachers'>
+        <input
+          type='text'
+          name='filter'
+          value='{{filter}}'
+          placeholder='Nome ou matéria'
+        />
+
+        <button type='submit'>Filtrar</button>
+      </form>
+    </div>
     <table width='100%'>
       <thead>
         <tr>

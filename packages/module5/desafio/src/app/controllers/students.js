@@ -13,7 +13,9 @@ module.exports = {
   },
 
   create(req, res) {
-    return res.render('students/create');
+    Student.teacherSelectOptions((options) => {
+      return res.render('students/create', { teacherOptions: options });
+    });
   },
 
   post(req, res) {
@@ -45,7 +47,12 @@ module.exports = {
 
       student.birth_date = date(student.birth_date).iso;
 
-      return res.render('students/edit', { student });
+      Student.teacherSelectOptions((options) => {
+        return res.render('students/edit', {
+          student,
+          teacherOptions: options,
+        });
+      });
     });
   },
 

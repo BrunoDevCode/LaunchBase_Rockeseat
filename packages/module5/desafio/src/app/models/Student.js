@@ -40,11 +40,17 @@ module.exports = {
   },
 
   find(id, callback) {
-    db.query(`SELECT * FROM students WHERE id = $1`, [id], (err, results) => {
-      if (err) throw `Database error ${err}`;
+    db.query(
+      `SELECT students.*, teachers.name AS teacher_name FROM students
+      LEFT JOIN teachers ON (students.teacher_id = teachers.id)
+      WHERE students.id = $1`,
+      [id],
+      (err, results) => {
+        if (err) throw `Database error ${err}`;
 
-      return callback(results.rows[0]);
-    });
+        return callback(results.rows[0]);
+      }
+    );
   },
 
   update(data, callback) {
@@ -81,6 +87,14 @@ module.exports = {
       if (err) throw `Database error! ${err}`;
 
       return callback();
+    });
+  },
+
+  teacherSelectOptions(callback) {
+    db.query(`SELECT name, id FROM teachers`, (err, results) => {
+      if (err) throw `Database error ${err}`;
+
+      callback(results.rows);
     });
   },
 };

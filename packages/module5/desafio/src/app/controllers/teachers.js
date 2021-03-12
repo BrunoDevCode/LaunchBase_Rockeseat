@@ -3,12 +3,24 @@ const { age, date } = require('../lib/utils');
 
 module.exports = {
   index(req, res) {
-    Teacher.all((teachers) => {
-      for (teacher of teachers) {
-        teacher.subjects_taught = teacher.subjects_taught.split(',');
-      }
-      return res.render('teachers/index', { teachers });
-    });
+    const { filter } = req.query;
+
+    if (filter) {
+      Teacher.findBy(filter, (teachers) => {
+        for (teacher of teachers) {
+          teacher.subjects_taught = teacher.subjects_taught.split(',');
+        }
+
+        return res.render('teachers/index', { teachers, filter });
+      });
+    } else {
+      Teacher.all((teachers) => {
+        for (teacher of teachers) {
+          teacher.subjects_taught = teacher.subjects_taught.split(',');
+        }
+        return res.render('teachers/index', { teachers });
+      });
+    }
   },
 
   create(req, res) {
