@@ -101,4 +101,42 @@ module.exports = {
       return callback();
     });
   },
+
+  paginate(params) {
+    const { filter, limit, offset, callback } = params;
+
+    let query = '',
+      filterQuery = '',
+      totalQuery = `(
+        SELECT count(*) FROM teachers
+      ) AS total`;
+
+    if (filter) {
+      filterQuery = `${query}
+        WHERE teachers.name ILIKE '%${filter}%'
+        OR teachers.subjects_taught ILIKE '%${filter}%'
+      `;
+
+      totalQuery = `(
+        SELECT count(*) FROM teachers
+        ${filterQuery}
+      ) AS total`;
+    }
+
+    query = `
+      SELECT teachers.*, ${totalQuery}, count(students) AS total_students
+      FROM teachers
+      LEFT JOIN students ON (teachers.id = students.teacher_id)
+      ${filterQuery}
+      GROUP BY teachers.id
+      ORDER BY teachers.name ASC
+      LIMIT $1 OFFSET $2
+    `;
+
+    db.query(query, [limit, offset], (err, results) => {
+      if (err) throw `Database error ${err}`;
+
+      callback(results.rows);
+    });
+  },
 };

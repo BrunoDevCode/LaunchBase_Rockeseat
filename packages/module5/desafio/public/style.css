@@ -251,3 +251,28 @@ a.button,
 .card.table-container .header input {
   margin-right: 8px;
 }
+
+.card.table-container {
+  display: grid;
+  grid-template: 60px 1fr 60px / 1fr;
+  grid-gap: 16px;
+}
+
+.card.table-container .header {
+  margin-top: 0;
+}
+
+.card.table-container .pagination {
+  justify-self: center;
+}
+
+.card.table-container .pagination a {
+  color: var(--background-color);
+  font-weight: 700;
+  margin: 0 8px;
+}
+
+.card.table-container .pagination a:hover {
+  color: #aaa;
+  text-decoration: underline;
+}

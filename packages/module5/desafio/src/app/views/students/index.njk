@@ -6,7 +6,21 @@
 
 {% block content %}
   <div class="card table-container">
-    <a class='new' href='/students/create'>Novo</a>
+    <div class='header'>
+      <a class='new' href='/students/create'>Novo</a>
+
+      <form method='GET' action='/students'>
+        <input
+          type='text'
+          name='filter'
+          value='{{filter}}'
+          placeholder='Nome ou email'
+        />
+
+        <button type='submit'>Filtrar</button>
+      </form>
+    </div>
+    
     <table width='100%'>
       <thead>
         <tr>
@@ -30,5 +44,12 @@
         {% endfor %}
       </tbody>
     </table>
+
+    <div
+      class='pagination'
+      data-page={{pagination.page}}
+      data-total={{pagination.total}}
+      data-filter={{filter}}
+    ></div>
   </div>
 {% endblock %}
