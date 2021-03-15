@@ -1,0 +1,43 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+    <title>Sobre - {{ empresa.name }}</title>
+{% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h3>As melhores tecnologias em programação, direto ao ponto e do jeito certo.</h3>
+                <p>No meio de tanta informação e da quantidade de ferramentas que surgem todos os dias, você precisa de alguém que te leve na direção certa.</p>
+            </div>
+
+            <div class="techs">
+                <h3>As mesmas tecnologias utilizadas por empresas como:
+                </h3>
+                <p id='company'>Nubank, Netflix, Uber, Instagram e Airbnb</p>
+
+                <ul>
+                    {% for tech in empresa.techs %}
+                        <li>
+                            <div class="image">
+                                <img src='{{ tech.img_url }}' alt='{{ tech.name }}'/>
+                                <p>{{ tech.name }}</p>
+                            </div>
+
+                            <p>{{ tech.text }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="networking">
+                {% for link in empresa.networking %}
+                    <a id='{{ link.name }}' href="{{ link.url }}">{{ link.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

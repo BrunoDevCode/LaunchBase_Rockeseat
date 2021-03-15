@@ -1,0 +1,22 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+    <title>{{video.id}}
+        course</title>
+{% endblock %}
+
+{% block content %}
+    <div class="courses">
+        <div class="card" id='{{ video.id }}'>
+            <div class="card-img"></div>
+                <iframe src="https://rocketseat.com.br/{{video.id}}" frameborder="0"></iframe>
+            <div class="card-content">{{ video.description }}</div>
+
+            <div class="card-info">
+                <p>{{ video.moduleLength }}
+                    Modulos</p>
+                <p class='card-price'>{{ video.price }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

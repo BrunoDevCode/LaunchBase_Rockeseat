@@ -1,0 +1,15 @@
+{% extends 'layout.njk' %}
+
+{% block head %}
+    <title>Links - Rocketseat</title>
+{% endblock %}
+
+{% block content %}
+    <main>
+        <div id='main-links' class="links">
+            {% for link in empresa.mainLinks %}
+                <a href="{{ link.url }}">{{ link.description }}</a>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
