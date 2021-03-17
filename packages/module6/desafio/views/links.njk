@@ -1,15 +1,21 @@
 {% extends 'layout.njk' %}
 
 {% block head %}
-    <title>Links - Rocketseat</title>
+  <title>Links - Rocketseat</title>
 {% endblock %}
 
 {% block content %}
-    <main>
-        <div id='main-links' class="links">
-            {% for link in empresa.mainLinks %}
-                <a href="{{ link.url }}">{{ link.description }}</a>
-            {% endfor %}
-        </div>
-    </main>
+  <main>
+    <div id='main-links' class="links">
+      {% for link in empresa.mainLinks %}
+        <a href="{{ link.url }}">{{ link.description }}</a>
+      {% endfor %}
+    </div>
+
+    <div id='masks-input'>
+      <input type='text' id='porcent' placeholder='Porcetagem' onkeydown='Mask.apply(this, "formatPorcent")' />
+
+      <input type='text' id='cpf' placeholder='CPF' onkeydown='Mask.apply(this, "formatCPF")' />
+    </div>
+  </main>
 {% endblock %}
