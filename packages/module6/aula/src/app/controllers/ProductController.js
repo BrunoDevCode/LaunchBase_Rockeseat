@@ -30,9 +30,6 @@ module.exports = {
     let results = await Product.create(req.body);
     const productId = results.rows[0].id;
 
-    results = await Category.all();
-    const categories = results.rows;
-
     // Cria um array de promise
     const filesPromise = req.files.map((file) =>
       File.create({ ...file, product_id: productId })
